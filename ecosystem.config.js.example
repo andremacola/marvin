@@ -1,0 +1,15 @@
+module.exports = {
+  apps: [
+    {
+      name: 'marvin',
+      exec_mode: 'fork',
+      instances: 1,
+      interpreter: '/usr/bin/node',
+      cwd: '/home/marvin/api',
+      script: 'npm',
+      args: 'start',
+      watch: false,
+      ignore_watch: ['node_modules']
+    }
+  ]
+}

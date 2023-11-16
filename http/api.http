@@ -1,0 +1,9 @@
+### Send Message
+
+POST {{API_HOST_URL_PROD}}/{{MARVIN_TOKEN}}/send
+Content-Type: application/json
+{
+  "cmd": "chat",
+  "to": "{{WA_ADMIN_NUMBER}}",
+  "msg": "teste de mensagem"
+}

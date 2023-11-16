@@ -1,0 +1,9 @@
+*.html
+*.svg
+*.min.js
+*.eslintrc.js
+**/node_modules/**
+**/.wwebjs_auth/**
+**/.wwebjs_cache/**
+**/dist/**
+**/.nyc_output/**
