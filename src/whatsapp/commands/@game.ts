@@ -22,7 +22,10 @@ export async function game(client: WAWebJS.Client, message: WAWebJS.Message, cmd
       return client.sendMessage(message.from, 'Este comando só pode ser usado em grupos.')
     }
 
-    const game = new GamaGame({ client: client, message: message })
+    let topics: string | undefined = message.body.replace('@game start', '').trim()
+    topics = topics.length > 5 ? topics : undefined
+
+    const game = new GamaGame({ client: client, message: message }, 10, topics)
     games.push({ group: message.from, game: game, started: true })
 
     // @ts-ignore

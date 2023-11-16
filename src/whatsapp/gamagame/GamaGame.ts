@@ -27,7 +27,7 @@ export class GamaGame {
 
   constructor(
     { client, message }: WhatsAppInterface,
-    private questionsPerGame = 3,
+    private questionsPerGame = 10,
     private topics?: string
   ) {
     this.whp = { client: client, message: message }
