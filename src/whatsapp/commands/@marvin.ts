@@ -94,7 +94,7 @@ export async function marvin(client: WAWebJS.Client, message: WAWebJS.Message, i
 
     logger.info(
       `@marvinChat => [${author ? `${from} -> ${author}` : from}] ${question}`,
-      response.usage
+      JSON.stringify(response.usage)
     )
 
     return marvinResponse.trim()
