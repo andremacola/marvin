@@ -5,7 +5,13 @@ import { logger } from '../../utils/helpers'
 // import path from 'path'
 
 export async function getVideoFileUrl(url: string, quality = '(mp4)[height<480]') {
-  quality = url.includes('instagram') ? '(mp4)' : quality
+  if (url.includes('https://x.com')) {
+    url.replace('https://x.com', 'https://twitter.com')
+  }
+  quality =
+    url.includes('instagram') || url.includes('twitter') || url.includes('x.com')
+      ? '(mp4)'
+      : quality
   const video = await youtubedl(url, {
     format: quality,
     // output: path.join(__dirname, '../../../public/cdn/videos/%(id)s.%(ext)s'),
