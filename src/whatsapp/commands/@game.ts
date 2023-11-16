@@ -15,7 +15,7 @@ export async function game(client: WAWebJS.Client, message: WAWebJS.Message, cmd
     return message.reply('A função *@gamagame* somente pode iniciada pelo administrador.')
   }
 
-  if (message.body === '@game start') {
+  if (message.body.startsWith('@game start')) {
     const chat = await message.getChat()
 
     if (!chat.isGroup) {
