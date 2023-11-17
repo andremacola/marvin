@@ -12,8 +12,8 @@ const vips = process.env.WA_VIP_NUMBERS.split(' ')
 export async function vision(client: WAWebJS.Client, message: WAWebJS.Message, cmd?: string) {
   const { from, body, author } = message
 
-  if (!vips.includes(from)) {
-    return message.reply('A função *@vision* somente pode ser usada por membros premium')
+  if (!vips.includes(author ? author : from)) {
+    return message.reply('A função *@img* somente pode ser usada por membros premium')
   }
 
   const question = body.replace(`${cmd} `, '')
