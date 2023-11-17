@@ -209,7 +209,7 @@ export class GamaGame {
 
     this.whp.client?.sendMessage(
       this.group,
-      `❔*${this.getCurrentTopic()}:* ${this.getCurrentQuestion()}❔`
+      `❔*${this.getCurrentTopic()}*: ${this.getCurrentQuestion()}❔`
     )
   }
 
