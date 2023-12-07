@@ -11,7 +11,7 @@
     "build:ts": "tsc",
     "watch:ts": "tsc -w",
     "dev": "npm run build:ts && concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"npm:watch:ts\" \"npm:dev:start\"",
-    "dev:start": "fastify start --ignore-watch='.wwebjs_auth .wwebjs_cache .ts$' -w -l info -P dist/app.js --options"
+    "dev:start": "fastify start --ignore-watch='.wwebjs_auth .wwebjs_cache public .ts$' -w -l info -P dist/app.js --options"
   },
   "keywords": [],
   "author": "andremacola",

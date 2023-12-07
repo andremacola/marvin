@@ -10,5 +10,5 @@
     "esModuleInterop": true,
   },
   "include": ["src/**/*.ts"],
-  "exclude": [".wwebjs_auth", ".wwebjs_cache"]
+  "exclude": [".wwebjs_auth", ".wwebjs_cache", "public/**/*", "public/**/**/*"]
 }
