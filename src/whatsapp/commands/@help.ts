@@ -6,7 +6,7 @@ export async function help(client: WAWebJS.Client, message: WAWebJS.Message, cmd
   const text = `ℹ *Comandos Disponíveis* ℹ
 *@help*: Listar comandos disponíveis para interação
 *@ping*: _@pong_
-*@_vid_ endereço-do-video*: Baixar vídeo do Instagram/Youtube/Twitter/Vimeo
+*@_vid_ endereço-do-video*: Baixar vídeo do Youtube/X(Twitter)/Vimeo
 *@pay endereço-da-noticia*: _Burlar paywall_
 *@resume endereço-da-noticia*: _Resumo da matéria_
 *@ac sigla-do-ativo*: _Cotação do ativo na bolsa_

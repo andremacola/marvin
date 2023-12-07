@@ -2,9 +2,10 @@ import WAWebJS, { MessageMedia } from 'whatsapp-web.js'
 import youtubedl from 'youtube-dl-exec'
 import { IMessageRawData } from '../../types'
 import { logger } from '../../utils/helpers'
+import path from 'path'
 // import path from 'path'
 
-export async function getVideoFileUrl(url: string, quality = '(mp4)[height<480]') {
+export async function getVideoFile(url: string, quality = '(mp4)[height<480]') {
   if (url.includes('https://x.com')) {
     url.replace('https://x.com', 'https://twitter.com')
   }
@@ -14,15 +15,14 @@ export async function getVideoFileUrl(url: string, quality = '(mp4)[height<480]'
       : quality
   const video = await youtubedl(url, {
     format: quality,
-    // output: path.join(__dirname, '../../../public/cdn/videos/%(id)s.%(ext)s'),
-    dumpSingleJson: true,
+    dumpJson: true,
+    output: path.join(__dirname, '../../../public/cdn/videos/%(id)s.%(ext)s'),
     noCheckCertificates: true,
     noWarnings: true,
-    skipDownload: true,
     addHeader: ['referer:youtube.com', 'user-agent:googlebot']
   })
 
-  return video.url
+  return video
 }
 
 export async function vid(client: WAWebJS.Client, message: WAWebJS.Message, cmd?: string) {
@@ -34,10 +34,10 @@ export async function vid(client: WAWebJS.Client, message: WAWebJS.Message, cmd?
   try {
     await message.reply('📼 É pra já chefe! Realizando download...')
 
-    const videoUrl = await getVideoFileUrl(url)
-    const video = await MessageMedia.fromUrl(videoUrl, { unsafeMime: true })
+    const video = await getVideoFile(url)
+    const media = MessageMedia.fromFilePath(video._filename)
 
-    return message.reply(video)
+    return message.reply(media)
   } catch (error) {
     logger.red('@vid ERRO =>', error)
   }
