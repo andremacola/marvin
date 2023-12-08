@@ -70,7 +70,6 @@ export async function vid(client: WAWebJS.Client, message: WAWebJS.Message, cmd?
     }
 
     const media = MessageMedia.fromFilePath(video._filename)
-    console.log('media', media)
     return chat.sendMessage(media, { caption: video.title })
   } catch (error) {
     logger.red('@vid ERRO =>', error)

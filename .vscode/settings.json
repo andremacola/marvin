@@ -4,7 +4,7 @@
     "**/.wwebjs_cache/**": true,
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll": "explicit"
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
