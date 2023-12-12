@@ -19,6 +19,10 @@ export function getVideoQuality(url: string, quality = '(mp4)[height<480]') {
     url.replace('https://x.com', 'https://twitter.com')
   }
 
+  if (url.includes('instagram') || url.includes('twitter') || url.includes('x.com')) {
+    throw new Error('Vídeos do Twitter ou Instagram temporariamente indisponíveis.')
+  }
+
   return url.includes('instagram') || url.includes('twitter') || url.includes('x.com')
     ? '(mp4)'
     : quality
