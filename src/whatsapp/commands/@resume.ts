@@ -39,7 +39,7 @@ export async function resume(client: WAWebJS.Client, message: WAWebJS.Message, c
     if (post) {
       let marvinResponse = ''
       const template =
-        'Faça um resumo dos principais pontos chaves do texto ou notícia a seguir em no máximo 850 caracteres, não precisa seguir exatamente a quantidade de caracteres desejada, sintetize da melhor maneira possível de acordo com o tamanho e conteúdo do texto. Quebre em parágrafos para melhor leitura: \n'
+        'Toda mensagem deve ser respondida com um resumo do texto enviado, de forma sucinta, clara e direta. Sempre menor que o texto original. O resumo deve ser em português brasileiro, independentemente do idioma do texto original.\n'
       const chatOptions: Partial<ChatCompletionCreateParamsNonStreaming> = {
         user: from,
         messages: [
