@@ -41,7 +41,7 @@
     "puppeteer": "^21.11.0",
     "qrcode-terminal": "^0.12.0",
     "uuid": "^9.0.1",
-    "whatsapp-web.js": "^1.23.0",
+    "whatsapp-web.js": "github:pedroslopez/whatsapp-web.js#webpack-exodus",
     "youtube-dl-exec": "^3.0.2"
   },
   "devDependencies": {
@@ -51,8 +51,8 @@
     "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.9.0",
     "@typescript-eslint/parser": "^7.9.0",
-    "eslint": "^8.57.0",
     "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.1.3",
     "fastify-tsconfig": "^2.0.0",
