@@ -1,5 +1,5 @@
 import WAWebJS, { MessageMedia } from 'whatsapp-web.js'
-import youtubedl from 'youtube-dl-exec'
+import youtubedl, { Payload } from 'youtube-dl-exec'
 import { IMessageRawData } from '../../types'
 import { logger } from '../../utils/helpers'
 import path from 'path'
@@ -41,7 +41,7 @@ export async function downloadVideo(url: string) {
   return video
 }
 
-export async function getVideoInfo(url: string) {
+export async function getVideoInfo(url: string): Promise<Payload & { _filename: string, url: string }> {
   const quality = getVideoQuality(url)
   const video = await youtubedl(url, {
     format: quality,
@@ -53,7 +53,7 @@ export async function getVideoInfo(url: string) {
     addHeader: ['referer:youtube.com', 'user-agent:googlebot']
   })
 
-  return video
+  return video as Payload & { _filename: string, url: string };
 }
 
 export async function vid(client: WAWebJS.Client, message: WAWebJS.Message, cmd?: string) {
