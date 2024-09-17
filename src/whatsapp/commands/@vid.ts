@@ -19,9 +19,9 @@ export function getVideoQuality(url: string, quality = '(mp4)[height<480]') {
     url.replace('https://x.com', 'https://twitter.com')
   }
 
-  if (url.includes('instagram') || url.includes('twitter') || url.includes('x.com')) {
-    throw new Error('Vídeos do Twitter ou Instagram temporariamente indisponíveis.')
-  }
+  // if (url.includes('instagram') || url.includes('twitter') || url.includes('x.com')) {
+  //   throw new Error('Vídeos do Twitter ou Instagram temporariamente indisponíveis.')
+  // }
 
   return url.includes('instagram') || url.includes('twitter') || url.includes('x.com')
     ? '(mp4)'
@@ -41,7 +41,9 @@ export async function downloadVideo(url: string) {
   return video
 }
 
-export async function getVideoInfo(url: string): Promise<Payload & { _filename: string, url: string }> {
+export async function getVideoInfo(
+  url: string
+): Promise<Payload & { _filename: string; url: string }> {
   const quality = getVideoQuality(url)
   const video = await youtubedl(url, {
     format: quality,
@@ -53,7 +55,7 @@ export async function getVideoInfo(url: string): Promise<Payload & { _filename: 
     addHeader: ['referer:youtube.com', 'user-agent:googlebot']
   })
 
-  return video as Payload & { _filename: string, url: string };
+  return video as Payload & { _filename: string; url: string }
 }
 
 export async function vid(client: WAWebJS.Client, message: WAWebJS.Message, cmd?: string) {
