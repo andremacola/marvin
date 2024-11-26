@@ -29,20 +29,19 @@
     "@fastify/sensible": "^5.6.0",
     "@fastify/static": "^7.0.4",
     "@sinclair/typebox": "^0.33.1",
-    "axios": "^1.7.7",
-    "better-sqlite3": "^11.3.0",
+    "axios": "^1.7.8",
+    "better-sqlite3": "^11.6.0",
     "chalk": "^4.1.2",
     "dotenv": "^16.4.5",
     "fastify": "^4.28.1",
     "fastify-cli": "^5.9.0",
     "fastify-plugin": "^4.0.0",
-    "npm": "^10.8.3",
-    "openai": "^4.62.0",
-    "puppeteer": "^23.3.1",
+    "openai": "^4.73.1",
+    "puppeteer": "^23.9.0",
     "qrcode-terminal": "^0.12.0",
     "uuid": "^9.0.1",
-    "whatsapp-web.js": "^1.25.0",
-    "youtube-dl-exec": "^3.0.9"
+    "whatsapp-web.js": "^1.26.1-alpha.3",
+    "youtube-dl-exec": "^3.0.10"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.11",
@@ -51,13 +50,13 @@
     "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
-    "concurrently": "^9.0.1",
+    "concurrently": "^9.1.0",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.2.1",
     "fastify-tsconfig": "^2.0.0",
-    "prettier": "^3.3.3",
+    "prettier": "^3.4.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.2"
+    "typescript": "^5.7.2"
   }
 }
